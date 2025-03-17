@@ -26,6 +26,12 @@ class AppRouter{
           ),
         ],
       ),
+
+      //for filter
+      GoRoute(
+        path: AppRoutePaths.filter,
+        builder: (context, state) => FilterPage(),
+      ),
     ],
   );
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tickets/core/constants/constants.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../app/routes/app_route_paths.dart';
 import '../../../../core/widgets/widgets.dart';
 
 class TicketPage extends StatelessWidget {
@@ -18,7 +20,10 @@ class TicketPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("124 tickets", style: TextStyle(color: AppColors.headlineGrey),),
-              Icon(Icons.filter_alt_outlined, color: AppColors.title,)
+
+              IconButton(onPressed: (){
+                context.go(AppRoutePaths.filter);
+              }, icon: Icon(Icons.filter_alt_outlined, color: AppColors.title,),)
             ],
           ),
           SizedBox(

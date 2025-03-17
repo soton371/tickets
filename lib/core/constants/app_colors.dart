@@ -11,6 +11,8 @@ class AppColors {
   static const Color divider = Color(0xffD8E0ED);
   static const Color subTitle = Color(0xffB7B7B7);
   static const Color title = Color(0xff3B3B3B);
+  static const Color checkBoxTitle = Color(0xff5C5D76);
+  static const Color fill = Color(0xffF3F4F8);
 
   static Color status(String? status){
     if((status??'').isEmpty)return headlineGrey;
