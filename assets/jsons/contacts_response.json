@@ -1,53 +1,52 @@
-{
-  "contacts": [
-    {
-      "name": "Michale Kahnwald",
-      "email": "michel@email.com",
-      "phone": "+12 34 56 78 90",
-      "address": "12A, Lillistrom, Norway",
-      "avatar": ""
-    },
-    {
-      "name": "Noah",
-      "email": "michel@email.com",
-      "phone": "+12 34 56 78 90",
-      "address": "12A, Lillistrom, Norway",
-      "avatar": ""
-    },
-    {
-      "name": "Jonus Kajhnwald",
-      "email": "michel@email.com",
-      "phone": "+12 34 56 78 90",
-      "address": "12A, Lillistrom, Norway",
-      "avatar": ""
-    },
-    {
-      "name": "Ines",
-      "email": "michel@email.com",
-      "phone": "+12 34 56 78 90",
-      "address": null,
-      "avatar": ""
-    },
-    {
-      "name": "Noah",
-      "email": "michel@email.com",
-      "phone": "+12 34 56 78 90",
-      "address": "12A, Lillistrom, Norway",
-      "avatar": ""
-    },
-    {
-      "name": "Jonus Kajhnwald",
-      "email": "michel@email.com",
-      "phone": "+12 34 56 78 90",
-      "address": "12A, Lillistrom, Norway",
-      "avatar": ""
-    },
-    {
-      "name": "Michale Kahnwald",
-      "email": "michel@email.com",
-      "phone": "+12 34 56 78 90",
-      "address": "12A, Lillistrom, Norway",
-      "avatar": ""
-    }
-  ]
-}
+[
+  {
+    "name": "Michale Kahnwald",
+    "email": "michel@email.com",
+    "phone": "+12 34 56 78 90",
+    "address": "12A, Lillistrom, Norway",
+    "avatar": ""
+  },
+  {
+    "name": "Noah",
+    "email": "michel@email.com",
+    "phone": "+12 34 56 78 90",
+    "address": "12A, Lillistrom, Norway",
+    "avatar": ""
+  },
+  {
+    "name": "Jonus Kajhnwald",
+    "email": "michel@email.com",
+    "phone": "+12 34 56 78 90",
+    "address": "12A, Lillistrom, Norway",
+    "avatar": ""
+  },
+  {
+    "name": "Ines",
+    "email": "michel@email.com",
+    "phone": "+12 34 56 78 90",
+    "address": null,
+    "avatar": ""
+  },
+  {
+    "name": "Noah",
+    "email": "michel@email.com",
+    "phone": "+12 34 56 78 90",
+    "address": "12A, Lillistrom, Norway",
+    "avatar": ""
+  },
+  {
+    "name": "Jonus Kajhnwald",
+    "email": "michel@email.com",
+    "phone": "+12 34 56 78 90",
+    "address": "12A, Lillistrom, Norway",
+    "avatar": ""
+  },
+  {
+    "name": "Michale Kahnwald",
+    "email": "michel@email.com",
+    "phone": "+12 34 56 78 90",
+    "address": "12A, Lillistrom, Norway",
+    "avatar": ""
+  }
+]
+
