@@ -82,6 +82,10 @@ class ContactPage extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)
                                 ),
+                                position: PopupMenuPosition.under,
+                                constraints: BoxConstraints(
+                                  minWidth: 200
+                                ),
                                 itemBuilder: (context) {
                                   return AppValues.contactActions.map((action)=> PopupMenuItem(
                                     labelTextStyle: WidgetStatePropertyAll(TextStyle(fontWeight: FontWeight.w600, color: AppColors.title)),
