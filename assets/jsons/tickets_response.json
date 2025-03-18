@@ -1,5 +1,4 @@
 {
-  "total_tickets": 124,
   "tickets": [
     {
       "id": 132198423,
@@ -8,7 +7,9 @@
       "user": "Michale",
       "timestamp": "23 Dec 2023 03:43 PM",
       "priority": "Low",
-      "state": ["Open"]
+      "state": [
+        "Open"
+      ]
     },
     {
       "id": 132198423,
@@ -29,7 +30,9 @@
       "user": "Jonus",
       "timestamp": "23 Dec 2023 03:43 PM",
       "priority": "Low",
-      "state": ["Open"]
+      "state": [
+        "Open"
+      ]
     },
     {
       "id": 132198423,
@@ -39,7 +42,8 @@
       "timestamp": "25.01.2024 19:06",
       "priority": "Low",
       "state": [
-        "Open"]
+        "Open"
+      ]
     },
     {
       "id": 132198423,
@@ -48,7 +52,9 @@
       "user": "Sohel",
       "timestamp": "23 Dec 2023 03:43 PM",
       "priority": "Low",
-      "state": ["Open"]
+      "state": [
+        "Open"
+      ]
     },
     {
       "id": 132198423,
@@ -57,7 +63,10 @@
       "user": "Sohel",
       "timestamp": "23 Dec 2023 03:43 PM",
       "priority": "Medium",
-      "state": ["Closed","Spam"]
+      "state": [
+        "Closed",
+        "Spam"
+      ]
     },
     {
       "id": 132198423,
@@ -67,7 +76,8 @@
       "timestamp": "25.01.2024 19:06",
       "priority": "Low",
       "state": [
-        "Open"]
+        "Open"
+      ]
     }
   ]
 }
