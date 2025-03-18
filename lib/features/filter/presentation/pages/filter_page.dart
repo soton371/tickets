@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tickets/core/constants/constants.dart';
+import 'package:tickets/core/widgets/widgets.dart';
 
 class FilterPage extends StatelessWidget {
   const FilterPage({super.key});
@@ -116,20 +117,7 @@ class FilterPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: AppSizes.paddingInside,),
-              TextFormField(
-                decoration: InputDecoration(
-                  filled: true,
-                  isDense: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(100),
-                    borderSide: BorderSide.none
-                  ),
-                  fillColor: AppColors.fill,
-                  prefixIcon: Icon(CupertinoIcons.search),
-                  hintText: "Search tags",
-                  hintStyle: TextStyle(fontSize: AppSizes.fontSizeLarge, fontWeight: FontWeight.w500, color: AppColors.headlineGrey),
-                ),
-              ),
+              AppSearchBar(),
               SizedBox(height: AppSizes.paddingInside,),
               Wrap(
                 runSpacing: AppSizes.paddingInside,
