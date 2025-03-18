@@ -11,7 +11,7 @@ class TicketPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppAppBar(),
+      appBar: AppAppBar(isNotification: true,),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: AppSizes.paddingBody),
         children: [

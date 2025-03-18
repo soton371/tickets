@@ -9,7 +9,7 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppAppBar(),
+      appBar: AppAppBar(isNotification: true,),
       body: Column(
         children: [
           Padding(
