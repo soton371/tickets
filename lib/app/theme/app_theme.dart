@@ -15,5 +15,13 @@ class AppTheme {
     ),
     fontFamily: "Montserrat",
     dividerTheme: DividerThemeData(color: AppColors.divider),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+          elevation: 0,
+          foregroundColor: AppColors.badge,
+          backgroundColor: AppColors.buttonBackground,
+          textStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: AppSizes.fontSizeLarge)
+      )
+    )
   );
 }

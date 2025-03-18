@@ -6,6 +6,7 @@ class AppColors {
   static const Color shadow = Colors.grey;
   static const Color background = Colors.white;
   static const Color badge = Color(0xffFE475B);
+  static const Color buttonBackground = Color(0xffFFDADE);
   static const Color headlineGrey = Color(0xff797979);
   static const Color containerBackground = Color(0xffF9FAFB);
   static const Color divider = Color(0xffD8E0ED);
