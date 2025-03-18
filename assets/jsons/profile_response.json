@@ -1,0 +1,30 @@
+{
+  "profile": {
+    "name": "Jonaus Kahnwald",
+    "role": "Support",
+    "email": "Username@email.com",
+    "first_name": "Jonaus",
+    "last_name": "Kahnwald",
+    "avatar": "",
+    "assigned_roles": [
+      {
+        "title": "Manager",
+        "group": "Codecayaneon support",
+        "manager": "Jonaus Kahnwald",
+        "avatar": ""
+      },
+      {
+        "title": "Agent",
+        "group": "Laravel support",
+        "manager": "Hannah Kahnwald",
+        "avatar": ""
+      },
+      {
+        "title": "Agent",
+        "group": "Upwork",
+        "manager": "Jana Neilsen",
+        "avatar": ""
+      }
+    ]
+  }
+}
