@@ -1,0 +1,73 @@
+{
+  "total_tickets": 124,
+  "tickets": [
+    {
+      "id": 132198423,
+      "status": "New",
+      "subject": "Search view, which can display dynamic suggestions, is the focused state of search bar.",
+      "user": "Michale",
+      "timestamp": "23 Dec 2023 03:43 PM",
+      "priority": "Low",
+      "state": ["Open"]
+    },
+    {
+      "id": 132198423,
+      "status": "First response overdue",
+      "subject": "Ticket subject small",
+      "user": "Noah",
+      "timestamp": "23 Dec 2023 03:43 PM",
+      "priority": "Urgent",
+      "state": [
+        "Open",
+        "Spam"
+      ]
+    },
+    {
+      "id": 132198423,
+      "status": "Customer responded",
+      "subject": "Search view, which can display dynamic suggestions, is the focused state of search bar.",
+      "user": "Jonus",
+      "timestamp": "23 Dec 2023 03:43 PM",
+      "priority": "Low",
+      "state": ["Open"]
+    },
+    {
+      "id": 132198423,
+      "status": "First response overdue",
+      "subject": "Ticket subject small",
+      "user": "Ashiqur",
+      "timestamp": "25.01.2024 19:06",
+      "priority": "Low",
+      "state": [
+        "Open"]
+    },
+    {
+      "id": 132198423,
+      "status": "Overdue",
+      "subject": "Search view, which can display dynamic suggestions, is the focused state of search bar.",
+      "user": "Sohel",
+      "timestamp": "23 Dec 2023 03:43 PM",
+      "priority": "Low",
+      "state": ["Open"]
+    },
+    {
+      "id": 132198423,
+      "status": "New",
+      "subject": "Search view, which can display dynamic suggestions, is the focused state of search bar.",
+      "user": "Sohel",
+      "timestamp": "23 Dec 2023 03:43 PM",
+      "priority": "Medium",
+      "state": ["Closed","Spam"]
+    },
+    {
+      "id": 132198423,
+      "status": "First response overdue",
+      "subject": "Ticket subject small",
+      "user": "Ashiqur",
+      "timestamp": "25.01.2024 19:06",
+      "priority": "Low",
+      "state": [
+        "Open"]
+    }
+  ]
+}
