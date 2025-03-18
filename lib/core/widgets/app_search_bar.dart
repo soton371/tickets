@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 
 class AppSearchBar extends StatelessWidget {
-  const AppSearchBar({super.key});
+  const AppSearchBar({super.key, this.hintText});
+  final String? hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class AppSearchBar extends StatelessWidget {
         ),
         fillColor: AppColors.fill,
         prefixIcon: Icon(CupertinoIcons.search),
-        hintText: "Search tags",
+        hintText: hintText ?? "Search here",
         hintStyle: TextStyle(fontSize: AppSizes.fontSizeLarge, fontWeight: FontWeight.w500, color: AppColors.headlineGrey),
       ),
     );

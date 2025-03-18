@@ -117,7 +117,7 @@ class FilterPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: AppSizes.paddingInside,),
-              AppSearchBar(),
+              AppSearchBar(hintText: "Search tags",),
               SizedBox(height: AppSizes.paddingInside,),
               Wrap(
                 runSpacing: AppSizes.paddingInside,

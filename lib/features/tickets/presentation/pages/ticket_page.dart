@@ -19,7 +19,7 @@ class TicketPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("124 tickets", style: TextStyle(color: AppColors.headlineGrey),),
+              Text("124 tickets", style: TextStyle(color: AppColors.headlineGrey, fontWeight: FontWeight.w500),),
 
               IconButton(onPressed: (){
                 context.go(AppRoutePaths.filter);
