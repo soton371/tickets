@@ -13,6 +13,9 @@ Future<void> setupServiceLocator() async {
 
   sl.registerLazySingleton<ContactListRepositoryImpl>(
           () => ContactListRepositoryImpl());
+
+  sl.registerLazySingleton<ProfileRepositoryImpl>(
+          () => ProfileRepositoryImpl());
   //=============================== end Registering Repository Impl ===============================
 
   //############################### start Registering UseCase ###############################
@@ -21,11 +24,16 @@ Future<void> setupServiceLocator() async {
 
   sl.registerLazySingleton<ContactListUseCase>(
           () => ContactListUseCase(sl<ContactListRepositoryImpl>()));
+
+  sl.registerLazySingleton<ProfileUseCase>(
+          () => ProfileUseCase(sl<ProfileRepositoryImpl>()));
   //############################### end Registering UseCase ###############################
 
   //******************************* Start Registering Bloc *******************************
   sl.registerFactory<TicketsBloc>(() => TicketsBloc(sl<TicketListUseCase>()));
 
   sl.registerFactory<ContactBloc>(() => ContactBloc(sl<ContactListUseCase>()));
+
+  sl.registerFactory<ProfileBloc>(() => ProfileBloc(sl<ProfileUseCase>()));
   //******************************* End Registering Bloc *******************************
 }
