@@ -11,7 +11,7 @@ class ProfileUseCase {
 
   ProfileUseCase(this.repository);
 
-  Future<Either<Failure, List<ProfileResponseModel>>> call(){
+  Future<Either<Failure, ProfileResponseModel>> call(){
     return repository.fetchProfileResponse();
   }
 }
