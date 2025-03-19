@@ -4,49 +4,49 @@
     "email": "michel@email.com",
     "phone": "+12 34 56 78 90",
     "address": "12A, Lillistrom, Norway",
-    "avatar": ""
+    "avatar": "assets/images/michale.jpeg"
   },
   {
     "name": "Noah",
     "email": "michel@email.com",
     "phone": "+12 34 56 78 90",
     "address": "12A, Lillistrom, Norway",
-    "avatar": ""
+    "avatar": "assets/images/noah.jpeg"
   },
   {
     "name": "Jonus Kajhnwald",
     "email": "michel@email.com",
     "phone": "+12 34 56 78 90",
     "address": "12A, Lillistrom, Norway",
-    "avatar": ""
+    "avatar": "assets/images/jonus.jpeg"
   },
   {
     "name": "Ines",
     "email": "michel@email.com",
     "phone": "+12 34 56 78 90",
     "address": null,
-    "avatar": ""
+    "avatar": null
   },
   {
     "name": "Noah",
     "email": "michel@email.com",
     "phone": "+12 34 56 78 90",
     "address": "12A, Lillistrom, Norway",
-    "avatar": ""
+    "avatar": "assets/images/ines.jpeg"
   },
   {
     "name": "Jonus Kajhnwald",
     "email": "michel@email.com",
     "phone": "+12 34 56 78 90",
     "address": "12A, Lillistrom, Norway",
-    "avatar": ""
+    "avatar": "assets/images/jonus.jpeg"
   },
   {
     "name": "Michale Kahnwald",
     "email": "michel@email.com",
     "phone": "+12 34 56 78 90",
     "address": "12A, Lillistrom, Norway",
-    "avatar": ""
+    "avatar": "assets/images/contact1.webp"
   }
 ]
 
