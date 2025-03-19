@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tickets/core/constants/constants.dart';
 import 'package:tickets/core/widgets/widgets.dart';

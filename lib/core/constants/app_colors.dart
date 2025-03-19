@@ -19,7 +19,7 @@ class AppColors {
     if((status??'').isEmpty)return headlineGrey;
     final statusLower = status!.toLowerCase().trim();
     if(statusLower.startsWith('n'))return Color(0xff44A9F1);
-    if(statusLower.startsWith('l'))return Color(0xffFFAB00);
+    if(statusLower.startsWith('f'))return Color(0xffFFAB00);
     if(statusLower.startsWith('c'))return Color(0xff5A49B4);
     if(statusLower.startsWith('o'))return Color(0xffFE475B);
     return headlineGrey;
