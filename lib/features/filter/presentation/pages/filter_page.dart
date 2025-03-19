@@ -43,7 +43,7 @@ class FilterPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Brand',
+                'Status',
                 style: TextStyle(
                   fontSize: AppSizes.fontSizeLarge,
                   fontWeight: FontWeight.w600,
@@ -61,8 +61,6 @@ class FilterPage extends StatelessWidget {
                         value: false,
                         onChanged: (onChanged) {},
                       ),
-                      CircleAvatar(radius: 14),
-                      SizedBox(width: 8),
                       Text(
                         "Data $i",
                         style: TextStyle(
@@ -98,11 +96,7 @@ class FilterPage extends StatelessWidget {
                     value: null,
                     icon: Icon(Icons.keyboard_arrow_down),
                     hint: Text("Select priority",style: TextStyle(fontSize: AppSizes.fontSizeLarge, fontWeight: FontWeight.w500, color: AppColors.headlineGrey),),
-                    items: [
-                      DropdownMenuItem(value: "1", child: Text("Dropdown 1")),
-                      DropdownMenuItem(value: "2", child: Text("Dropdown 2")),
-                      DropdownMenuItem(value: "3", child: Text("Dropdown 3")),
-                    ],
+                    items: priorities.map((priority)=>DropdownMenuItem(value: priority, child: Text(priority)),).toList(),
                     onChanged: (value) {},
                   ),
                 ),
@@ -122,71 +116,7 @@ class FilterPage extends StatelessWidget {
               SizedBox(height: AppSizes.paddingInside,),
               Wrap(
                 runSpacing: AppSizes.paddingInside,
-                children: [
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSizes.radius),
-                          border: Border.all(color: AppColors.divider),
-                          color: AppColors.background
-                      ),
-                      child: Text("Tag one",style: TextStyle(fontSize: AppSizes.fontSizeSmall, color: AppColors.headlineGrey, fontWeight: FontWeight.w500))),
-                  SizedBox(width: AppSizes.paddingInside,),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSizes.radius),
-                          border: Border.all(color: AppColors.divider),
-                          color: AppColors.background
-                      ),
-                      child: Text("Tag two",style: TextStyle(fontSize: AppSizes.fontSizeSmall, color: AppColors.headlineGrey, fontWeight: FontWeight.w500))),
-                  SizedBox(width: AppSizes.paddingInside,),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSizes.radius),
-                          border: Border.all(color: AppColors.divider),
-                          color: AppColors.background
-                      ),
-                      child: Text("Tag three wit long text",style: TextStyle(fontSize: AppSizes.fontSizeSmall, color: AppColors.headlineGrey, fontWeight: FontWeight.w500))),
-                  SizedBox(width: AppSizes.paddingInside,),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSizes.radius),
-                          border: Border.all(color: AppColors.divider),
-                          color: AppColors.background
-                      ),
-                      child: Text("Tag four",style: TextStyle(fontSize: AppSizes.fontSizeSmall, color: AppColors.headlineGrey, fontWeight: FontWeight.w500))),
-                  SizedBox(width: AppSizes.paddingInside,),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSizes.radius),
-                          border: Border.all(color: AppColors.divider),
-                          color: AppColors.background
-                      ),
-                      child: Text("Tag five",style: TextStyle(fontSize: AppSizes.fontSizeSmall, color: AppColors.headlineGrey, fontWeight: FontWeight.w500))),
-                  SizedBox(width: AppSizes.paddingInside,),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSizes.radius),
-                          border: Border.all(color: AppColors.divider),
-                          color: AppColors.background
-                      ),
-                      child: Text("Tag six wit long text",style: TextStyle(fontSize: AppSizes.fontSizeSmall, color: AppColors.headlineGrey, fontWeight: FontWeight.w500))),
-                  SizedBox(width: AppSizes.paddingInside,),
-                  Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSizes.radius),
-                          border: Border.all(color: AppColors.divider),
-                          color: AppColors.background
-                      ),
-                      child: Text("Tag seven",style: TextStyle(fontSize: AppSizes.fontSizeSmall, color: AppColors.headlineGrey, fontWeight: FontWeight.w500))),
-
-                ],
+                children: tags.map((tag)=>OutlineCard(value: tag)).toList(),
               )
             ],
           ),
@@ -195,3 +125,7 @@ class FilterPage extends StatelessWidget {
     );
   }
 }
+
+
+final List<String> priorities = ["Dropdown 1","Dropdown 2","Dropdown 3"];
+final List<String> tags = ["Tag one","Tag two","Tag three wit long text", "Tag four", "Tag five", "Tag six wit long text","Tag seven"];
