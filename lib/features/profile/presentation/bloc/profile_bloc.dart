@@ -14,7 +14,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc(this.profileUseCase) : super(ProfileInitial()) {
     on<DoFetchProfile>((event, emit) async {
       emit(ProfileLoading());
-
+      print("DoFetchProfile call");
       final result = await profileUseCase();
       result.fold(
         (failure) => emit(ProfileFailure(failure.message)),

@@ -4,25 +4,25 @@
   "email": "Username@email.com",
   "first_name": "Jonaus",
   "last_name": "Kahnwald",
-  "avatar": "",
+  "avatar": "assets/images/contact1.webp",
   "assigned_roles": [
     {
       "title": "Manager",
       "group": "Codecayaneon support",
       "manager": "Jonaus Kahnwald",
-      "avatar": ""
+      "avatar": "assets/images/jonus.jpeg"
     },
     {
       "title": "Agent",
       "group": "Laravel support",
       "manager": "Hannah Kahnwald",
-      "avatar": ""
+      "avatar": "assets/images/ines.jpeg"
     },
     {
       "title": "Agent",
       "group": "Upwork",
       "manager": "Jana Neilsen",
-      "avatar": ""
+      "avatar": "assets/images/noah.jpeg"
     }
   ]
 }

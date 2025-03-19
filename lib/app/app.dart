@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<TicketsBloc>(create: (context) => sl<TicketsBloc>()),
         BlocProvider<ContactBloc>(create: (context) => sl<ContactBloc>()),
-        BlocProvider<ProfileBloc>(create: (context) => sl<ProfileBloc>()),
+        BlocProvider<ProfileBloc>(create: (context) => sl<ProfileBloc>()..add(DoFetchProfile())),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
