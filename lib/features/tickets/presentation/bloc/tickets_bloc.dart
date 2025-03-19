@@ -12,12 +12,19 @@ class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
   final TicketListUseCase ticketListUseCase;
 
   TicketsBloc(this.ticketListUseCase) : super(TicketsInitial()) {
+    List<TicketListResponseModel> ticketListCopy = [];
     on<DoFetchTicketList>((event, emit) async {
-      emit(TicketListLoading());
+      if(ticketListCopy.isEmpty){
+        emit(TicketListLoading());
+      }
+
       final result = await ticketListUseCase();
       result.fold(
         (failure) => emit(TicketListFailure(failure.message)),
-        (tickets) => emit(TicketListSuccess(tickets)),
+        (tickets) {
+          emit(TicketListSuccess(tickets));
+          ticketListCopy = tickets;
+        },
       );
     });
   }
