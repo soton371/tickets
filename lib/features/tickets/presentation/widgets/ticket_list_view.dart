@@ -21,6 +21,8 @@ class TicketListView extends StatelessWidget {
           children: [
             Text(
               "${ticketList.length} tickets",
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: AppColors.headlineGrey,
                 fontWeight: FontWeight.w500,
@@ -70,6 +72,8 @@ class TicketListView extends StatelessWidget {
                     ),
                     child: Text(
                       data.status??'',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: AppSizes.fontSizeSmall,
                         color: AppColors.status(data.status??''),
@@ -80,6 +84,8 @@ class TicketListView extends StatelessWidget {
                   SizedBox(height: 8),
                   Text(
                     "#ID ${data.id??''}",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: AppSizes.fontSizeSmall,
                       color: AppColors.subTitle,
@@ -100,6 +106,8 @@ class TicketListView extends StatelessWidget {
                     children: [
                       Text(
                         "${data.user??''}  ",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: AppSizes.fontSizeSmall,
                           color: AppColors.headlineGrey,
@@ -112,6 +120,8 @@ class TicketListView extends StatelessWidget {
                       ),
                       Text(
                         "  ${data.timestamp??''}",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: AppSizes.fontSizeSmall,
                           color: AppColors.headlineGrey,
