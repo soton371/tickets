@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/widgets/widgets.dart';
 import '../../data/models/contact_list_response_model.dart';
+import 'contact_info_tile.dart';
 
 class ContactListView extends StatelessWidget {
   const ContactListView({super.key, required this.contactList});
@@ -51,6 +52,8 @@ class ContactListView extends StatelessWidget {
                       Expanded(
                         child: Text(
                           data.name??'',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: AppSizes.fontSizeLarge,
@@ -89,53 +92,17 @@ class ContactListView extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: AppSizes.paddingInside),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.mail_outline,
-                        color: AppColors.headlineGrey,
-                        size: 16,
-                      ),
-                      Text(
-                        " ${data.email??''}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.headlineGrey,
-                        ),
-                      ),
-                    ],
+                  ContactInfoTile(
+                    icon: Icons.mail_outline,
+                    value: data.email,
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.phone_in_talk_outlined,
-                        color: AppColors.headlineGrey,
-                        size: 16,
-                      ),
-                      Text(
-                        " ${data.phone??''}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.headlineGrey,
-                        ),
-                      ),
-                    ],
+                  ContactInfoTile(
+                    icon: Icons.phone_in_talk_outlined,
+                    value: data.phone,
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.location_on_outlined,
-                        color: AppColors.headlineGrey,
-                        size: 16,
-                      ),
-                      Text(
-                        " ${(data.address??'').isEmpty? 'Not added yet' : data.address}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: (data.address??'').isEmpty? AppColors.subTitle: AppColors.headlineGrey,
-                        ),
-                      ),
-                    ],
+                  ContactInfoTile(
+                    icon: Icons.location_on_outlined,
+                    value: data.address,
                   ),
                 ],
               ),
