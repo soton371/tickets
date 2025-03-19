@@ -10,7 +10,7 @@ class TicketListUseCase {
 
   TicketListUseCase(this.repository);
 
-  Future<Either<Failure, List<TicketListResponseModel>>> call() {
+  Future<Either<Failure, List<TicketListResponseModel>>> call(){
     return repository.fetchTicketListResponse();
   }
 }
