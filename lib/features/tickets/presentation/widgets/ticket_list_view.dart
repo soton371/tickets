@@ -104,44 +104,44 @@ class TicketListView extends StatelessWidget {
                   SizedBox(height: 8),
                   Row(
                     children: [
-                      Text(
-                        "${data.user??''}  ",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: AppSizes.fontSizeSmall,
-                          color: AppColors.headlineGrey,
-                          fontWeight: FontWeight.w500,
+                      Flexible(
+                        child: Text(
+                          "${data.user??''}  ",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: AppSizes.fontSizeSmall,
+                            color: AppColors.headlineGrey,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                       CircleAvatar(
                         radius: 2,
                         backgroundColor: AppColors.divider,
                       ),
-                      Text(
-                        "  ${data.timestamp??''}",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: AppSizes.fontSizeSmall,
-                          color: AppColors.headlineGrey,
-                          fontWeight: FontWeight.w500,
+                      Flexible(
+                        child: Text(
+                          "  ${data.timestamp??''}",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: AppSizes.fontSizeSmall,
+                            color: AppColors.headlineGrey,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ],
                   ),
                   SizedBox(height: 5),
                   Divider(),
-                  SizedBox(height: 5),
                   Wrap(
                     children: [
                       if(data.priority != null)
                         OutlineCard(value: data.priority!, isPriority: true,),
                       if((data.state??[]).isNotEmpty)
-                        ...data.state!.map((value)=>Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: OutlineCard(value: value,),
-                        ),)
+                        ...data.state!.map((value)=>OutlineCard(value: value,),)
 
                     ],
                   ),

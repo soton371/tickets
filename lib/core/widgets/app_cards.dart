@@ -15,6 +15,7 @@ class OutlineCard extends StatelessWidget {
         horizontal: 12,
         vertical: 6,
       ),
+      margin: EdgeInsets.only(right: 8,top: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
           AppSizes.radius,
@@ -37,13 +38,15 @@ class OutlineCard extends StatelessWidget {
               ],
             ),
 
-          Text(value,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontSize: AppSizes.fontSizeSmall,
-              color: AppColors.headlineGrey,
-              fontWeight: FontWeight.w500,
+          Flexible(
+            child: Text(value,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: AppSizes.fontSizeSmall,
+                color: AppColors.headlineGrey,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ],
