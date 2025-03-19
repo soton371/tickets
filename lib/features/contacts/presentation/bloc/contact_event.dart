@@ -4,3 +4,9 @@ part of 'contact_bloc.dart';
 sealed class ContactEvent {}
 
 class DoFetchContactList extends ContactEvent{}
+
+
+class DoSearchContact extends ContactEvent {
+  final String query;
+  DoSearchContact(this.query);
+}

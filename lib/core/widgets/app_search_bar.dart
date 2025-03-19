@@ -4,12 +4,16 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 
 class AppSearchBar extends StatelessWidget {
-  const AppSearchBar({super.key, this.hintText});
+  const AppSearchBar({super.key, this.hintText, this.controller, this.onChanged});
   final String? hintText;
+  final TextEditingController? controller;
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      onChanged: onChanged,
       decoration: InputDecoration(
         filled: true,
         isDense: true,

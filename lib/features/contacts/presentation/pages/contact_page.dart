@@ -7,7 +7,8 @@ import '../../../../core/widgets/widgets.dart';
 import '../widgets/contact_list_view.dart';
 
 class ContactPage extends StatelessWidget {
-  const ContactPage({super.key});
+  ContactPage({super.key});
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,13 @@ class ContactPage extends StatelessWidget {
               vertical: 5,
               horizontal: AppSizes.paddingBody,
             ),
-            child: AppSearchBar(hintText: "Search contacts"),
+            child: AppSearchBar(
+              hintText: "Search contacts",
+              controller: searchController,
+              onChanged: (value) {
+                context.read<ContactBloc>().add(DoSearchContact(value));
+              },
+            ),
           ),
           Expanded(
             child: BlocBuilder<ContactBloc, ContactState>(

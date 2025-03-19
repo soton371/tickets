@@ -11,7 +11,7 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  final List<Widget> pages = [TicketPage(), ContactPage(), ProfilePage()];
+  final List<Widget> _pages = [TicketPage(), ContactPage(), ProfilePage()];
   final ValueNotifier<int> indexNotifier = ValueNotifier<int>(0);
 
   @override
@@ -26,7 +26,7 @@ class _RootPageState extends State<RootPage> {
     return Scaffold(
       body: ValueListenableBuilder(
         valueListenable: indexNotifier,
-        builder: (context, value, child) => pages[value],
+        builder: (context, value, child) => _pages[value],
       ),
       bottomNavigationBar: ValueListenableBuilder(
         valueListenable: indexNotifier,
