@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
+import '../utilities/string_modifications.dart';
 
 class AppEmpty extends StatelessWidget {
   const AppEmpty({super.key, required this.msg, this.icon});
@@ -58,3 +59,34 @@ class AppLoadingState extends StatelessWidget {
     );
   }
 }
+
+
+class AppAvatar extends StatelessWidget {
+  const AppAvatar({super.key, this.avatar, this.name, required this.height, required this.width, this.isBorder = false});
+  final String? avatar,name;
+  final double height,width;
+  final bool isBorder;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      width: width,
+      padding: isBorder ? EdgeInsets.all(1):null,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: isBorder ? Border.all(
+          color: AppColors.divider,
+        ):null,
+      ),
+      child: CircleAvatar(
+        backgroundImage: (avatar??'').trim().isNotEmpty ? AssetImage(
+          avatar!,
+        ):null,
+        backgroundColor: AppColors.indicator,
+        child: (avatar??'').trim().isEmpty ? Text(nameSplit(name)??'AB',style: TextStyle(color: AppColors.seed, fontSize: AppSizes.fontSizeSmall, fontWeight: FontWeight.w600),): null,
+      ),
+    );
+  }
+}
+

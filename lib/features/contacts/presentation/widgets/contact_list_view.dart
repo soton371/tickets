@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/constants.dart';
+import '../../../../core/widgets/widgets.dart';
 import '../../data/models/contact_list_response_model.dart';
 
 class ContactListView extends StatelessWidget {
@@ -43,24 +44,8 @@ class ContactListView extends StatelessWidget {
                   Row(
                     children: [
                       //img
-                      Container(
-                        height: 44,
-                        width: 44,
-                        padding: EdgeInsets.all(1),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: AppColors.divider,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          backgroundImage: (data.avatar??'').trim().isNotEmpty ? AssetImage(
-                            data.avatar!,
-                          ):null,
-                          backgroundColor: AppColors.indicator,
-                          child: (data.avatar??'').trim().isEmpty ? Text("AB",style: TextStyle(color: AppColors.seed, fontSize: AppSizes.fontSizeSmall, fontWeight: FontWeight.w600),): null,
-                        ),
-                      ),
+                      AppAvatar(height: 44,width: 44,avatar: data.avatar,name: data.name,isBorder: true,),
+
                       SizedBox(width: AppSizes.paddingInside),
                       //name
                       Expanded(
