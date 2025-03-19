@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import '../constants/app_exception_messages.dart';
 import 'failures.dart';
 
@@ -8,6 +10,9 @@ class ServerException implements Exception {
 
 
 Failure handleException(dynamic e, StackTrace stackTrace) {
+  if (kDebugMode) {
+    print("Exception: $e \n StackTrace: $stackTrace");
+  }
   if (e is FormatException) {
     return ResponseFailure(AppExceptionMessage.format);
   } else if (e is TypeError) {
