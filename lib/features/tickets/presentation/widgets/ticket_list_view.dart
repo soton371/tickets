@@ -31,7 +31,7 @@ class TicketListView extends StatelessWidget {
 
             IconButton(
               onPressed: () {
-                context.go(AppRoutePaths.filter);
+                context.push(AppRoutePaths.filter);
               },
               icon: Icon(
                 Icons.filter_alt_outlined,

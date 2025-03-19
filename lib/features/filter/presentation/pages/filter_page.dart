@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tickets/core/constants/constants.dart';
 import 'package:tickets/core/widgets/widgets.dart';
 
@@ -18,7 +19,9 @@ class FilterPage extends StatelessWidget {
           ),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pop();
+          },
           icon: Icon(Icons.close),
         ),
         actions: [
