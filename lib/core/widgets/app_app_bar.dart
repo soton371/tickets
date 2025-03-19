@@ -10,6 +10,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       forceMaterialTransparency: true,
+      automaticallyImplyLeading: false,
       title: Text(title ?? "Gain Solutions"),
       actions: [
         if(isNotification)

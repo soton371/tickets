@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
 import '../../../../app/routes/app_route_paths.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/widgets/widgets.dart';
@@ -31,7 +29,7 @@ class TicketListView extends StatelessWidget {
 
             IconButton(
               onPressed: () {
-                context.push(AppRoutePaths.filter);
+                Navigator.pushNamed(context, AppRoutePaths.filter);
               },
               icon: Icon(
                 Icons.filter_alt_outlined,

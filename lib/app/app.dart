@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tickets/app/routes/app_route_paths.dart';
 import 'package:tickets/app/routes/app_router.dart';
 import 'package:tickets/app/theme/app_theme.dart';
 
@@ -18,8 +19,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<ContactBloc>(create: (context) => sl<ContactBloc>()),
         BlocProvider<ProfileBloc>(create: (context) => sl<ProfileBloc>()..add(DoFetchProfile())),
       ],
-      child: MaterialApp.router(
-        routerConfig: AppRouter.router,
+      child: MaterialApp(
+        initialRoute: AppRoutePaths.root,
+        onGenerateRoute: AppRouter.generateRoute,
         theme: AppTheme.light,
         debugShowCheckedModeBanner: false,
       ),

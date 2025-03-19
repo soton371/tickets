@@ -1,10 +1,20 @@
-import 'package:go_router/go_router.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:tickets/app/routes/app_route_paths.dart';
 
 import '../../features/feature_pages.dart';
 
 class AppRouter{
-  static final GoRouter router = GoRouter(
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case AppRoutePaths.root:
+        return CupertinoPageRoute(builder: (_) => const RootPage());
+      case AppRoutePaths.filter:
+        return CupertinoPageRoute(builder: (_) => const FilterPage());
+      default:
+        return CupertinoPageRoute(builder: (_) => const RootPage());
+    }
+  }
+  /*static final GoRouter router = GoRouter(
     initialLocation: AppRoutePaths.tickets,
     routes: [
       ShellRoute(
@@ -33,5 +43,5 @@ class AppRouter{
         builder: (context, state) => FilterPage(),
       ),
     ],
-  );
+  );*/
 }
