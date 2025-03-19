@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<TicketsBloc>(create: (context) => sl<TicketsBloc>()),
+        BlocProvider<ContactBloc>(create: (context) => sl<ContactBloc>()),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
