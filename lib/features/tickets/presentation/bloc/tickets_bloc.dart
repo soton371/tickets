@@ -40,6 +40,7 @@ class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
     DoFilterTicketList event,
     Emitter<TicketsState> emit,
   ) async {
+    //for status
     final selectedStatuses =
         event.statusList
             .where((ticket) => ticket.selected)
@@ -49,16 +50,29 @@ class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
 
     if (selectedStatuses.isNotEmpty) {
       filteredList =
-          ticketListCopy
+          filteredList
               .where((ticket) => selectedStatuses.contains(ticket.status))
               .toList();
     }
 
+    //for priority
     if (event.selectedPriority != null) {
       filteredList =
-          ticketListCopy
+          filteredList
               .where((ticket) => ticket.priority == event.selectedPriority)
               .toList();
+    }
+
+    ///for tag
+    final selectedTags = event.tagList
+        .where((ticket) => ticket.selected)
+        .map((ticket) => ticket.title)
+        .toSet();
+
+    if (selectedTags.isNotEmpty) {
+      filteredList = filteredList.where((ticket) {
+        return ticket.state?.any((state) => selectedTags.contains(state)) ?? false;
+      }).toList();
     }
 
     emit(FilteredTicketListSuccess(filteredList));

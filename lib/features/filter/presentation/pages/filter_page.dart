@@ -140,7 +140,7 @@ class FilterPage extends StatelessWidget {
                                     .map(
                                       (priority) => DropdownMenuItem<String?>(
                                         value: priority,
-                                        child: Text(priority),
+                                        child: Text(priority??''),
                                       ),
                                     ),
                               ],

@@ -10,7 +10,7 @@ class DoStatusChange extends FilterEvent{
 
 
 class DoPriorityListChange extends FilterEvent{
-  final List<String> priorityList;
+  final List<String?> priorityList;
   DoPriorityListChange(this.priorityList);
 }
 
