@@ -13,6 +13,12 @@ final class TicketListSuccess extends TicketsState {
   TicketListSuccess(this.ticketList);
 }
 
+final class FilteredTicketListSuccess extends TicketsState {
+  final List<TicketListResponseModel> filteredTicketList;
+
+  FilteredTicketListSuccess(this.filteredTicketList);
+}
+
 final class TicketListFailure extends TicketsState {
   final String message;
 

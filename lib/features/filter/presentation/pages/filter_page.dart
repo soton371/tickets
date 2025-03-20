@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tickets/core/constants/constants.dart';
 import 'package:tickets/core/widgets/widgets.dart';
+import 'package:tickets/features/features_di.dart';
 
 import '../bloc/filter_bloc.dart';
 
@@ -30,7 +31,10 @@ class FilterPage extends StatelessWidget {
             ),
             actions: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.read<TicketsBloc>().add(DoFilterTicketList(statusList: state.statusList));
+                  Navigator.pop(context);
+                },
                 child: Text(
                   "Apply",
                   style: TextStyle(

@@ -30,6 +30,10 @@ class TicketPage extends StatelessWidget {
             context.read<FilterBloc>().add(DoStatusChange(statusList));
             return TicketListView(ticketList: state.ticketList,);
           }
+          if(state is FilteredTicketListSuccess) {
+            return TicketListView(ticketList: state.filteredTicketList,);
+          }
+
           return SizedBox.shrink();
         },
       ),
