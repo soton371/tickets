@@ -10,14 +10,14 @@ part 'tickets_state.dart';
 
 class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
   final TicketListUseCase ticketListUseCase;
-
+  List<TicketListResponseModel> ticketListCopy = [];
   TicketsBloc(this.ticketListUseCase) : super(TicketsInitial()) {
-    List<TicketListResponseModel> ticketListCopy = [];
+
     on<DoFetchTicketList>((event, emit) async {
       if(ticketListCopy.isEmpty){
         emit(TicketListLoading());
       }
-
+      ticketListCopy = [];
       final result = await ticketListUseCase();
       result.fold(
         (failure) => emit(TicketListFailure(failure.message)),
