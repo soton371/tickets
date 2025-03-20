@@ -7,7 +7,7 @@ part 'filter_event.dart';
 part 'filter_state.dart';
 
 class FilterBloc extends Bloc<FilterEvent, FilterState> {
-  FilterBloc() : super(FilterState(statusList: [], priorityList: [], selectedPriority: null)) {
+  FilterBloc() : super(FilterState(statusList: [], priorityList: [], selectedPriority: null, tagList: [])) {
     on<DoStatusChange>((event, emit) {
       emit(state.copyWith(statusList: event.statusList));
     });
@@ -18,6 +18,10 @@ class FilterBloc extends Bloc<FilterEvent, FilterState> {
 
     on<DoSelectedPriorityChanged>((event, emit) {
       emit(state.copyWith(selectedPriority: event.selectedPriority));
+    });
+
+    on<DoSelectedTagListChange>((event, emit) {
+      emit(state.copyWith(tagList: event.tagList));
     });
   }
 }

@@ -20,3 +20,9 @@ class DoSelectedPriorityChanged extends FilterEvent{
   DoSelectedPriorityChanged(this.selectedPriority);
 }
 
+
+
+class DoSelectedTagListChange extends FilterEvent{
+  final List<TagEntities> tagList;
+  DoSelectedTagListChange(this.tagList);
+}

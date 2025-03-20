@@ -6,3 +6,10 @@ class StatusEntities{
 }
 
 
+class TagEntities{
+  final String title;
+  bool selected;
+
+  TagEntities({required this.title, required this.selected});
+}
+

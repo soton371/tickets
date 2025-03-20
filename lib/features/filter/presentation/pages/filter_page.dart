@@ -33,7 +33,7 @@ class FilterPage extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   context.read<TicketsBloc>().add(
-                    DoFilterTicketList(statusList: state.statusList, selectedPriority: state.selectedPriority),
+                    DoFilterTicketList(statusList: state.statusList, selectedPriority: state.selectedPriority, tagList: state.tagList),
                   );
                   Navigator.pop(context);
                 },
@@ -157,22 +157,33 @@ class FilterPage extends StatelessWidget {
                     ),
 
                   //tag
-                  Text(
-                    'Tags',
-                    style: TextStyle(
-                      fontSize: AppSizes.fontSizeLarge,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.title,
-                    ),
-                  ),
-                  SizedBox(height: AppSizes.paddingInside),
-                  AppSearchBar(hintText: "Search tags"),
-                  SizedBox(height: AppSizes.paddingInside),
-                  Wrap(
-                    runSpacing: AppSizes.paddingInside,
-                    children:
-                        tags.map((tag) => OutlineCard(value: tag)).toList(),
-                  ),
+                  if(state.tagList.isNotEmpty)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Tags',
+                          style: TextStyle(
+                            fontSize: AppSizes.fontSizeLarge,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.title,
+                          ),
+                        ),
+                        SizedBox(height: AppSizes.paddingInside),
+                        AppSearchBar(hintText: "Search tags"),
+                        SizedBox(height: AppSizes.paddingInside),
+                        Wrap(
+                          runSpacing: AppSizes.paddingInside,
+                          children:
+                          state.tagList.map((tag) => ChoiceChip(label: Text(tag.title), selected: tag.selected,onSelected: (v){
+                            tag.selected = v;
+                            context.read<FilterBloc>().add(DoSelectedTagListChange(state.tagList));
+                          },)).toList(),
+                        ),
+                        SizedBox(height: AppSizes.paddingBody),
+                      ],
+                    )
+
                 ],
               ),
             ),
@@ -183,13 +194,3 @@ class FilterPage extends StatelessWidget {
   }
 }
 
-final List<String> priorities = ["Dropdown 1", "Dropdown 2", "Dropdown 3"];
-final List<String> tags = [
-  "Tag one",
-  "Tag two",
-  "Tag three wit long text",
-  "Tag four",
-  "Tag five",
-  "Tag six wit long text",
-  "Tag seven",
-];
