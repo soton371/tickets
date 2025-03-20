@@ -21,13 +21,22 @@ class TicketPage extends StatelessWidget {
           if(state is TicketListSuccess) {
             List<StatusEntities> statusList = [];
             Set<String> uniqueStatuses = {};
+            List<String> priorityList = [];
+            Set<String> uniquePriorities = {};
 
             for (var ticket in state.ticketList) {
               if (ticket.status != null && uniqueStatuses.add(ticket.status!)) {
                 statusList.add(StatusEntities(status: ticket.status!, selected: false));
               }
+
+              if(ticket.priority != null && uniquePriorities.add(ticket.priority!)){
+                priorityList.add(ticket.priority!);
+              }
             }
+
             context.read<FilterBloc>().add(DoStatusChange(statusList));
+            context.read<FilterBloc>().add(DoPriorityListChange(priorityList));
+
             return TicketListView(ticketList: state.ticketList,);
           }
           if(state is FilteredTicketListSuccess) {

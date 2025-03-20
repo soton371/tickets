@@ -4,3 +4,5 @@ class StatusEntities{
 
   StatusEntities({required this.status, required this.selected});
 }
+
+

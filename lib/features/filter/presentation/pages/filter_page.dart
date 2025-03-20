@@ -32,7 +32,9 @@ class FilterPage extends StatelessWidget {
             actions: [
               TextButton(
                 onPressed: () {
-                  context.read<TicketsBloc>().add(DoFilterTicketList(statusList: state.statusList));
+                  context.read<TicketsBloc>().add(
+                    DoFilterTicketList(statusList: state.statusList),
+                  );
                   Navigator.pop(context);
                 },
                 child: Text(
@@ -51,84 +53,109 @@ class FilterPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Status',
-                    style: TextStyle(
-                      fontSize: AppSizes.fontSizeLarge,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.title,
-                    ),
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: state.statusList.length,
-                    itemBuilder: (_, i) {
-                      final status = state.statusList[i];
-                      return Row(
-                        children: [
-                          Checkbox.adaptive(
-                            value: status.selected,
-                            onChanged: (changed) {
-                              status.selected = changed??false;
-                              context.read<FilterBloc>().add(DoStatusChange(state.statusList));
-                            },
-                          ),
-                          Text(status.status,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.checkBoxTitle,
-                            ),
-                          ),
-                        ],
-                      );
-                    },
-                  ),
-                  // Priority section
-                  Text(
-                    'Priority',
-                    style: TextStyle(
-                      fontSize: AppSizes.fontSizeLarge,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.title,
-                    ),
-                  ),
-                  SizedBox(height: AppSizes.paddingInside),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.headlineGrey),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: AppSizes.paddingInside,
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
-                        isExpanded: true,
-                        value: null,
-                        icon: Icon(Icons.keyboard_arrow_down),
-                        hint: Text(
-                          "Select priority",
+                  if (state.statusList.isNotEmpty)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Status',
                           style: TextStyle(
                             fontSize: AppSizes.fontSizeLarge,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.headlineGrey,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.title,
                           ),
                         ),
-                        items:
-                            priorities
-                                .map(
-                                  (priority) => DropdownMenuItem(
-                                    value: priority,
-                                    child: Text(priority),
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: state.statusList.length,
+                          itemBuilder: (_, i) {
+                            final status = state.statusList[i];
+                            return Row(
+                              children: [
+                                Checkbox.adaptive(
+                                  value: status.selected,
+                                  onChanged: (changed) {
+                                    status.selected = changed ?? false;
+                                    context.read<FilterBloc>().add(
+                                      DoStatusChange(state.statusList),
+                                    );
+                                  },
+                                ),
+                                Text(
+                                  status.status,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.checkBoxTitle,
                                   ),
-                                )
-                                .toList(),
-                        onChanged: (value) {},
-                      ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(height: AppSizes.paddingBody),
+
+                  // Priority section
+                  if (state.priorityList.isNotEmpty)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Priority',
+                          style: TextStyle(
+                            fontSize: AppSizes.fontSizeLarge,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.title,
+                          ),
+                        ),
+                        SizedBox(height: AppSizes.paddingInside),
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: AppColors.headlineGrey),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppSizes.paddingInside,
+                          ),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton<String?>(
+                              isExpanded: true,
+                              value: state.selectedPriority,
+                              icon: Icon(Icons.keyboard_arrow_down),
+                              hint: Text(
+                                "Select priority",
+                                style: TextStyle(
+                                  fontSize: AppSizes.fontSizeLarge,
+                                  fontWeight: FontWeight.w500,
+                                  color: AppColors.headlineGrey,
+                                ),
+                              ),
+                              items: [
+                                DropdownMenuItem<String?>(
+                                  value: null,
+                                  child: Text("Select priority"),
+                                ),
+                                ...state.priorityList
+                                    .map(
+                                      (priority) => DropdownMenuItem<String?>(
+                                        value: priority,
+                                        child: Text(priority),
+                                      ),
+                                    ),
+                              ],
+                              onChanged: (value) {
+                                context.read<FilterBloc>().add(
+                                  DoSelectedPriorityChanged(value),
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: AppSizes.paddingBody),
+                      ],
+                    ),
+
                   //tag
                   Text(
                     'Tags',
