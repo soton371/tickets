@@ -7,5 +7,7 @@ class DoFetchTicketList extends TicketsEvent{}
 
 class DoFilterTicketList extends TicketsEvent{
   final List<StatusEntities> statusList;
-  DoFilterTicketList({required this.statusList});
+  final String? selectedPriority;
+  DoFilterTicketList({required this.statusList, required this.selectedPriority});
 }
+

@@ -33,7 +33,7 @@ class FilterPage extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   context.read<TicketsBloc>().add(
-                    DoFilterTicketList(statusList: state.statusList),
+                    DoFilterTicketList(statusList: state.statusList, selectedPriority: state.selectedPriority),
                   );
                   Navigator.pop(context);
                 },

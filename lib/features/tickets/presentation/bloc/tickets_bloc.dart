@@ -44,10 +44,20 @@ class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
         .where((ticket) => ticket.selected)
         .map((ticket) => ticket.status)
         .toSet();
+    List<TicketListResponseModel> filteredList = List.from(ticketListCopy);
 
-    final filteredList = ticketListCopy
-        .where((ticket) => selectedStatuses.contains(ticket.status))
-        .toList();
+    if(selectedStatuses.isNotEmpty){
+      filteredList = ticketListCopy
+          .where((ticket) => selectedStatuses.contains(ticket.status))
+          .toList();
+    }
+
+    if(event.selectedPriority != null){
+      filteredList = ticketListCopy
+          .where((ticket) => ticket.priority == event.selectedPriority)
+          .toList();
+    }
+
 
     emit(FilteredTicketListSuccess(filteredList));
   }
