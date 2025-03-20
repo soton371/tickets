@@ -179,10 +179,21 @@ class FilterPage extends StatelessWidget {
                         Wrap(
                           runSpacing: AppSizes.paddingInside,
                           children:
-                          state.tagList.map((tag) => ChoiceChip(label: Text(tag.title), selected: tag.selected,onSelected: (v){
-                            tag.selected = v;
-                            context.read<FilterBloc>().add(DoSelectedTagListChange(state.tagList));
-                          },)).toList(),
+                          state.tagList.map((tag) => Padding(
+                            padding: EdgeInsets.only(bottom: 8,right: AppSizes.paddingInside),
+                            child: ChoiceChip(
+                              label: Text(tag.title),
+                              labelStyle: TextStyle(
+                                fontSize: AppSizes.fontSizeSmall,
+                                color: AppColors.headlineGrey,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              backgroundColor: AppColors.background,
+                              selected: tag.selected,onSelected: (v){
+                              tag.selected = v;
+                              context.read<FilterBloc>().add(DoSelectedTagListChange(state.tagList));
+                            },),
+                          )).toList(),
                         ),
                         SizedBox(height: AppSizes.paddingBody),
                       ],
