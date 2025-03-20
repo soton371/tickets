@@ -26,3 +26,8 @@ class DoSelectedTagListChange extends FilterEvent{
   final List<TagEntities> tagList;
   DoSelectedTagListChange(this.tagList);
 }
+
+class DoAllTagListChange extends FilterEvent{
+  final List<TagEntities> allTagList;
+  DoAllTagListChange(this.allTagList);
+}

@@ -48,6 +48,7 @@ class TicketPage extends StatelessWidget {
             filterBloc.add(DoStatusChange(statusList));
             filterBloc.add(DoPriorityListChange(priorityList));
             filterBloc.add(DoSelectedTagListChange(tagList));
+            filterBloc.add(DoAllTagListChange(tagList));
 
 
             return TicketListView(ticketList: state.ticketList,);

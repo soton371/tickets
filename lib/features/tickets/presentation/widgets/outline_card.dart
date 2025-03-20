@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
+import '../../../../core/constants/constants.dart';
+
 
 class OutlineCard extends StatelessWidget {
   const OutlineCard({super.key, required this.value, this.isPriority = false});

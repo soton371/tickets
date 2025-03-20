@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../app/routes/app_route_paths.dart';
 import '../../../../core/constants/constants.dart';
-import '../../../../core/widgets/widgets.dart';
 import '../../data/models/ticket_list_response_model.dart';
+import 'outline_card.dart';
 
 class TicketListView extends StatelessWidget {
   const TicketListView({super.key, required this.ticketList});

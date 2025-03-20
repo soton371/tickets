@@ -171,7 +171,10 @@ class FilterPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: AppSizes.paddingInside),
-                        AppSearchBar(hintText: "Search tags"),
+                        AppSearchBar(hintText: "Search tags",onChanged: (v){
+                          final tt = state.allTagList.where((test)=>test.title.toLowerCase().contains(v.toLowerCase())).toList();
+                          context.read<FilterBloc>().add(DoSelectedTagListChange(tt));
+                        },),
                         SizedBox(height: AppSizes.paddingInside),
                         Wrap(
                           runSpacing: AppSizes.paddingInside,
