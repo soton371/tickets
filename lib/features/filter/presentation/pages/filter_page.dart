@@ -32,8 +32,9 @@ class FilterPage extends StatelessWidget {
             actions: [
               TextButton(
                 onPressed: () {
+                  final pp = state.selectedPriority == "Select priority"? null : state.selectedPriority;
                   context.read<TicketsBloc>().add(
-                    DoFilterTicketList(statusList: state.statusList, selectedPriority: state.selectedPriority, tagList: state.tagList),
+                    DoFilterTicketList(statusList: state.statusList, selectedPriority: pp, tagList: state.tagList),
                   );
                   Navigator.pop(context);
                 },
@@ -133,7 +134,7 @@ class FilterPage extends StatelessWidget {
                               ),
                               items: [
                                 DropdownMenuItem<String?>(
-                                  value: null,
+                                  value: "Select priority",
                                   child: Text("Select priority"),
                                 ),
                                 ...state.priorityList
