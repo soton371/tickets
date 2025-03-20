@@ -26,6 +26,7 @@ This project involves the development of a multi-screen mobile application using
 - **Flutter**: 3.29.1
 - **Dart**: 3.7.0
 - **State Management**: Bloc
+- **Design Principles**: Clean Architecture 
 
 ## Installation
 ### Prerequisites
