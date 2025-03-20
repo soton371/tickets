@@ -54,7 +54,7 @@ class TicketPage extends StatelessWidget {
             return TicketListView(ticketList: state.ticketList,);
           }
           if(state is FilteredTicketListSuccess) {
-            return state.filteredTicketList.isNotEmpty? TicketListView(ticketList: state.filteredTicketList,):AppEmpty(msg: "Ticket not found", icon: CupertinoIcons.tickets,);
+            return TicketListView(ticketList: state.filteredTicketList,);
           }
 
           return SizedBox.shrink();
