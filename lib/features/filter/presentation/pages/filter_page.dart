@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tickets/core/constants/constants.dart';
 import 'package:tickets/core/widgets/widgets.dart';
+
+import '../bloc/filter_bloc.dart';
 
 class FilterPage extends StatelessWidget {
   const FilterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    return BlocBuilder<FilterBloc, FilterState>(
+  builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -123,6 +128,8 @@ class FilterPage extends StatelessWidget {
         ),
       ),
     );
+  },
+);
   }
 }
 

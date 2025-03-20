@@ -6,6 +6,7 @@ import 'package:tickets/app/theme/app_theme.dart';
 
 import '../core/di/service_locator.dart';
 import '../features/features_di.dart';
+import '../features/filter/presentation/bloc/filter_bloc.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<TicketsBloc>(create: (context) => sl<TicketsBloc>()),
+        BlocProvider<FilterBloc>(create: (context) => sl<FilterBloc>()),
         BlocProvider<ContactBloc>(create: (context) => sl<ContactBloc>()),
         BlocProvider<ProfileBloc>(create: (context) => sl<ProfileBloc>()..add(DoFetchProfile())),
       ],

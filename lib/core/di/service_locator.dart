@@ -3,6 +3,7 @@
 import 'package:get_it/get_it.dart';
 
 import '../../features/features_di.dart';
+import '../../features/filter/presentation/bloc/filter_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -35,5 +36,7 @@ Future<void> setupServiceLocator() async {
   sl.registerFactory<ContactBloc>(() => ContactBloc(sl<ContactListUseCase>()));
 
   sl.registerFactory<ProfileBloc>(() => ProfileBloc(sl<ProfileUseCase>()));
+
+  sl.registerFactory<FilterBloc>(() => FilterBloc());
   //******************************* End Registering Bloc *******************************
 }
